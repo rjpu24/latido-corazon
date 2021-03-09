@@ -1,0 +1,63 @@
+*,
+*::after,
+*::before{
+    padding: 0;
+    margin:0;
+box-sizing: border-box;
+}
+body{
+    animation-name: bodyr;
+    animation-duration: 1.3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+.heart{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-color: pink;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    transform: rotate(-45deg);
+    animation: heartbit 1.3s linear 0s infinite;
+}
+.heart::after,.heart::before{
+    position: absolute;
+    content: "";
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: pink;
+}
+.heart::after{
+    top: -50%;
+}
+.heart::before{
+    left:   50%;
+}
+
+@keyframes heartbit{
+    0%{
+        transform: rotate(-45deg) scale(0.6);
+    }
+    50%{
+        transform: rotate(-45deg) scale(1);
+    }
+    100%{
+        transform: rotate(-45deg) scale(0.6);
+    }
+}
+@keyframes bodyr{
+    0%{
+        background-color: white;
+    }
+    50%{
+        background-color: darksalmon;
+    }
+    100%{
+        background-color: white;
+    }
+}
